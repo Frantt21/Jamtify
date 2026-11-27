@@ -8,15 +8,15 @@
 // so the playback, queue and sync logic stays unchanged.
 
 const DEFAULT_SERVER_URL = 'wss://jamtify--spicetify-jam--2yhg7lqvdhd5.code.run/jam-ws';
-const SERVER_URL_KEY = 'jam_server';
 
-/** Relay endpoint. Override at runtime with localStorage.setItem('jam_server', 'ws://localhost:8080/jam-ws'). */
+/**
+ * Relay endpoint. The value lives in the build so no saved browser state can
+ * redirect it; for local relay testing set `window.__JAM_SERVER__` in the
+ * console before starting a Jam (it is not persisted).
+ */
 export const jamServerUrl = (): string => {
-    try {
-        const custom = localStorage.getItem(SERVER_URL_KEY);
-        if (custom) return custom;
-    } catch {}
-    return DEFAULT_SERVER_URL;
+    const custom = typeof window !== 'undefined' ? (window as any).__JAM_SERVER__ : undefined;
+    return typeof custom === 'string' && custom ? custom : DEFAULT_SERVER_URL;
 };
 
 type Listener = (arg?: any) => void;

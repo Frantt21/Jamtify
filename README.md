@@ -44,7 +44,7 @@ irm https://raw.githubusercontent.com/Frantt21/Jamtify/main/install.ps1 | iex
 
 **Linux / macOS:**
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/Frantt21/Jamtify/main/install.sh)
+curl -fsSL https://raw.githubusercontent.com/Frantt21/Jamtify/main/install.sh | bash
 ```
 
 That's it. Restart Spotify and look for the Jam icon `((•))` in the player bar.
@@ -140,7 +140,7 @@ irm https://raw.githubusercontent.com/Frantt21/Jamtify/main/uninstall.ps1 | iex
 
 **Linux / macOS:**
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/Frantt21/Jamtify/main/uninstall.sh)
+curl -fsSL https://raw.githubusercontent.com/Frantt21/Jamtify/main/uninstall.sh | bash
 ```
 
 ---
@@ -195,13 +195,13 @@ npm run server
 # ws://localhost:8080/jam-ws  (health check: http://localhost:8080/health)
 ```
 
-Then point the extension at it from the Spotify devtools console once:
+Then point the extension at it from the Spotify devtools console (session-only, nothing is saved):
 
 ```js
-localStorage.setItem('jam_server', 'ws://localhost:8080/jam-ws');
+window.__JAM_SERVER__ = 'ws://localhost:8080/jam-ws';
 ```
 
-Remove the override with `localStorage.removeItem('jam_server')` to fall back to the public relay.
+The next Jam uses that relay; reload Spotify to go back to the public one.
 
 ### Configuration
 
