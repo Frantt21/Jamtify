@@ -7,7 +7,7 @@
 // on('data'|'close'), Peer: on('open'|'connection'|'error'), connect, destroy),
 // so the playback, queue and sync logic stays unchanged.
 
-const DEFAULT_SERVER_URL = 'wss://kyzen-vps-new-1.tail9c3971.ts.net/jam-ws';
+const DEFAULT_SERVER_URL = 'wss://jamtify--spicetify-jam--2yhg7lqvdhd5.code.run/jam-ws';
 const SERVER_URL_KEY = 'jam_server';
 
 /** Relay endpoint. Override at runtime with localStorage.setItem('jam_server', 'ws://localhost:8080/jam-ws'). */
