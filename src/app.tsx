@@ -6,7 +6,7 @@ import { version as __VER } from '../manifest.json';
 import './styles.css';
 
 // ── Secret telemetry ──────────────────────────────────
-const __PING = 'https://kyzen-vps-new-1.tail9c3971.ts.net/jam/ping';
+const __PING = 'https://jamtify--spicetify-jam--2yhg7lqvdhd5.code.run/jam/ping';
 
 // Anonymous device ID — generated once, stored in localStorage
 const __DID_KEY = 'jam_did';
