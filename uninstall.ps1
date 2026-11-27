@@ -1,0 +1,48 @@
+$ErrorActionPreference = "Stop"
+
+$ExtensionName = "spicetify-jam.js"
+$CustomAppName = "spicetify-jam"
+
+Write-Host "Uninstalling Spicetify Jam..." -ForegroundColor Green
+
+if (-not (Get-Command spicetify -ErrorAction SilentlyContinue)) {
+    Write-Host "spicetify not found. Install it first: https://spicetify.app/" -ForegroundColor Red
+    exit 1
+}
+
+function Invoke-Spicetify {
+    param([Parameter(Mandatory = $true)][string[]] $Arguments)
+
+    & spicetify @Arguments
+    if ($LASTEXITCODE -ne 0) {
+        throw "spicetify $($Arguments -join ' ') failed."
+    }
+}
+
+$UserDataPath = (& spicetify path userdata 2>$null | Select-Object -First 1)
+if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($UserDataPath)) {
+    $UserDataPath = Join-Path $env:APPDATA "spicetify"
+}
+
+$ExtensionsDir = Join-Path $UserDataPath.Trim() "Extensions"
+$ExtensionPath = Join-Path $ExtensionsDir $ExtensionName
+$CustomAppDir = Join-Path $UserDataPath.Trim() "CustomApps\$CustomAppName"
+
+Write-Host "Removing from Spicetify config..." -ForegroundColor Yellow
+& spicetify config extensions "${ExtensionName}+-" 2>$null
+& spicetify config extensions "${ExtensionName}-" 2>$null
+Invoke-Spicetify -Arguments @("config", "custom_apps", "${CustomAppName}-")
+
+if (Test-Path -LiteralPath $ExtensionPath) {
+    Write-Host "Deleting extension file..." -ForegroundColor Yellow
+    Remove-Item -LiteralPath $ExtensionPath -Force
+}
+if (Test-Path -LiteralPath $CustomAppDir) {
+    Remove-Item -LiteralPath $CustomAppDir -Recurse -Force
+}
+
+Invoke-Spicetify -Arguments @("apply")
+
+Write-Host ""
+Write-Host "Spicetify Jam uninstalled successfully!" -ForegroundColor Green
+Write-Host "   Restart Spotify to see changes."
