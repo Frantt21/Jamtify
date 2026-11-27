@@ -50,6 +50,7 @@ function send(client, data) {
 
 function fail(client, code, message) {
     send(client, { t: 'error', code, message });
+    log(`rejected ${code} from ${client.ip || 'unknown'} (room: ${client.roomId || client.pendingRoom || '-'})`);
 }
 
 function normalizeRoom(value) {
@@ -62,6 +63,7 @@ function registerHost(client, msg) {
     const room = normalizeRoom(msg.room);
     if (!room) return fail(client, 'bad-room', 'Invalid Jam ID');
     if (rooms.has(room)) return fail(client, 'room-taken', 'That Jam ID is already in use');
+    client.pendingRoom = room;
 
     rooms.set(room, { host: client, guests: new Map() });
     client.role = 'host';
@@ -75,6 +77,7 @@ function joinRoom(client, msg) {
     if (client.role) return fail(client, 'already-registered', 'This connection already joined a room');
     const room = normalizeRoom(msg.room);
     if (!room) return fail(client, 'bad-room', 'Invalid Jam ID');
+    client.pendingRoom = room;
 
     const entry = rooms.get(room);
     if (!entry) return fail(client, 'room-not-found', 'Jam not found');
@@ -173,8 +176,17 @@ const server = http.createServer((req, res) => {
 
 const wss = new WebSocketServer({ server, path: PATH, maxPayload: MAX_PAYLOAD });
 
-wss.on('connection', ws => {
-    const client = { ws, id: null, role: null, roomId: null, name: '', image: '' };
+wss.on('connection', (ws, req) => {
+    const client = {
+        ws,
+        id: null,
+        role: null,
+        roomId: null,
+        pendingRoom: null,
+        ip: (req.headers['x-forwarded-for'] || req.socket?.remoteAddress || '').split(',')[0].trim(),
+        name: '',
+        image: '',
+    };
     ws.isAlive = true;
 
     ws.on('pong', () => { ws.isAlive = true; });
@@ -184,7 +196,10 @@ wss.on('connection', ws => {
         if (!msg || typeof msg.t !== 'string') return;
         try { handle(client, msg); } catch (error) { log('handler error', error); }
     });
-    ws.on('close', () => leave(client));
+    ws.on('close', (code, reason) => {
+        leave(client);
+        if (!client.id || code !== 1000) log(`socket closed ${code} ${reason ? `(${reason})` : ''} from ${client.ip || 'unknown'}`);
+    });
     ws.on('error', () => { try { ws.close(); } catch {} });
 });
 

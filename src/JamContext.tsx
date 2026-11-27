@@ -1,6 +1,6 @@
 
 import React, { createContext, useContext, useState, useEffect, useRef, useCallback } from 'react';
-import { JamSocket, JamDataConnection } from './jamSocket';
+import { JamSocket, JamDataConnection, jamServerUrl } from './jamSocket';
 import { listenForJamInvites, parseJamId } from './jamInvite';
 import { watchForUpdates } from './updateCheck';
 import { version as CURRENT_VERSION } from '../manifest.json';
@@ -19,6 +19,11 @@ interface JamState {
     kickMember: (id: string) => void; toggleGuestControls: () => void;
     play: () => void; pause: () => void; next: () => void; prev: () => void;
 }
+
+const relayHost = (): string => {
+    const url = jamServerUrl();
+    try { return new URL(url).host; } catch { return url; }
+};
 
 const fmtImg = (u?: string): string => {
     if (!u) return '';
@@ -1000,7 +1005,7 @@ export const JamProvider: React.FC<{ children: React.ReactNode; onInvite: () => 
                 if (settled) return;
                 settled = true;
                 p.destroy();
-                const msg = 'Connection timed out — the host may be offline, or the Jam server could not be reached.';
+                const msg = `Connection timed out — the host may be offline, or the Jam server (${relayHost()}) could not be reached.`;
                 setError(msg);
                 rej(new Error(msg));
             }, 20000);
@@ -1049,7 +1054,7 @@ export const JamProvider: React.FC<{ children: React.ReactNode; onInvite: () => 
                 fail(msg);
             });
             p.on('close', (reason: any) => {
-                if (!settled) { fail('Could not connect to Jam — the host may be offline.'); return; }
+                if (!settled) { fail(`Could not connect to the Jam server (${relayHost()}) — the host may be offline.`); return; }
                 leaveJam();
                 if (reason === 'kicked') {
                     setError('Removed from Jam');
