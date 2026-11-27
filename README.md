@@ -1,40 +1,8 @@
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=1db954&height=120&section=header&animation=fadeIn" width="100%" alt="header wave" />
-  <br />
-  <img src="https://raw.githubusercontent.com/Frantt21/Jamtify/main/assets/logo.png" alt="Jamtify Logo" width="220" />
+# Jamtify
 
-  <br /><br />
+Listen to Spotify together in real time: playback sync, shared queue and guest controls, right inside Spotify.
 
-  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=20&duration=3000&pause=1000&color=1DB954&center=true&vCenter=true&repeat=true&width=520&height=40&lines=Listen+to+Spotify+together+in+real-time;Perfect+playback+sync+%E2%80%94+shared+queue+%E2%80%94+guest+controls;Host+listening+parties+right+inside+Spotify!" alt="Typing Subtitle" />
-
-  <br /><br />
-
-  <a href="https://github.com/Frantt21/Jamtify/releases">
-    <img src="https://img.shields.io/badge/version-1.4.2-1db954?style=flat-square&logo=spotify&logoColor=white" alt="Version" />
-  </a>
-  <a href="https://spicetify.app">
-    <img src="https://img.shields.io/badge/built%20for-spicetify-1db954?style=flat-square" alt="Spicetify" />
-  </a>
-  <a href="https://github.com/Frantt21/Jamtify/stargazers">
-    <img src="https://img.shields.io/github/stars/Frantt21/Jamtify?style=flat-square&logo=github&color=1db954" alt="GitHub Stars" />
-  </a>
-  <a href="LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-444?style=flat-square" alt="License" />
-  </a>
-
-  <br /><br />
-
-  <a href="#features">Features</a> &nbsp;•&nbsp;
-  <a href="#installation">Installation</a> &nbsp;•&nbsp;
-  <a href="#how-to-use">How to use</a> &nbsp;•&nbsp;
-  <a href="#updating">Updating</a> &nbsp;•&nbsp;
-  <a href="#uninstalling">Uninstalling</a> &nbsp;•&nbsp;
-  <a href="#troubleshooting">Troubleshooting</a>
-
-  <br /><br />
-</div>
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=1db954&height=2&width=100%" width="100%" alt="divider" />
+[Features](#features) · [Installation](#installation) · [How to use](#how-to-use) · [Updating](#updating) · [Uninstalling](#uninstalling) · [Troubleshooting](#troubleshooting)
 
 ## What's new in v1.4.2
 
