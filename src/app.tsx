@@ -103,7 +103,7 @@ async function main() {
 
   if (Spicetify.Playbar) {
     playbarBtn = new Spicetify.Playbar.Button(
-      'Spicetify Jam',
+      'Jamtify',
       jamSvg,
       toggle
     );
@@ -113,7 +113,7 @@ async function main() {
     }
   } else if (Spicetify.Topbar) {
     topbarBtn = new (Spicetify as any).Topbar.Button(
-      'Spicetify Jam',
+      'Jamtify',
       jamSvg,
       toggle
     );

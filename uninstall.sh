@@ -4,7 +4,7 @@ set -e
 EXTENSION_NAME="spicetify-jam.js"
 CUSTOM_APP_NAME="spicetify-jam"
 
-echo "🗑 Uninstalling Spicetify Jam..."
+echo "🗑 Uninstalling Jamtify..."
 
 if ! command -v spicetify &>/dev/null; then
   echo "❌ spicetify not found. Install it first: https://spicetify.app/"
@@ -34,5 +34,5 @@ rm -rf "${SPICETIFY_DATA_DIR}/CustomApps/${CUSTOM_APP_NAME}"
 spicetify apply
 
 echo ""
-echo "✅ Spicetify Jam uninstalled successfully!"
+echo "✅ Jamtify uninstalled successfully!"
 echo "   Restart Spotify to see changes."

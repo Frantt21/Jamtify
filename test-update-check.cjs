@@ -25,7 +25,7 @@ async function main() {
         window: browser, AbortSignal, console: { warn() {} },
         fetch: async (url, options) => {
             requests++;
-            assert.equal(url, 'https://raw.githubusercontent.com/Kyzenkms/spicetify-jam/main/manifest.json');
+            assert.equal(url, 'https://raw.githubusercontent.com/Frantt21/Jamtify/main/manifest.json');
             assert.equal(options.cache, 'no-store');
             assert.ok(options.signal instanceof AbortSignal);
             if (pending) await pending;

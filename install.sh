@@ -2,11 +2,11 @@
 set -e
 
 EXTENSION_NAME="spicetify-jam.js"
-EXTENSION_URL="https://raw.githubusercontent.com/Kyzenkms/spicetify-jam/main/dist/${EXTENSION_NAME}"
+EXTENSION_URL="https://raw.githubusercontent.com/Frantt21/Jamtify/main/dist/${EXTENSION_NAME}"
 CUSTOM_APP_NAME="spicetify-jam"
-CUSTOM_APP_URL="https://raw.githubusercontent.com/Kyzenkms/spicetify-jam/main/custom-app"
+CUSTOM_APP_URL="https://raw.githubusercontent.com/Frantt21/Jamtify/main/custom-app"
 
-echo "🎵 Installing Spicetify Jam..."
+echo "🎵 Installing Jamtify..."
 
 if ! command -v spicetify &>/dev/null; then
   for p in "$HOME/.spicetify" "$HOME/.local/bin" "/usr/local/bin"; do
@@ -83,5 +83,5 @@ if ! spicetify apply; then
 fi
 
 echo ""
-echo "✅ Done! Restart Spotify to use Spicetify Jam."
+echo "✅ Done! Restart Spotify to use Jamtify."
 echo "   Look for the Jam icon ((•)) in the bottom-right player bar."

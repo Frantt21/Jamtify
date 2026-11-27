@@ -8,4 +8,4 @@ fs.mkdirSync(destination, { recursive: true });
 for (const name of ['index.js', 'manifest.json']) {
     fs.copyFileSync(path.join(__dirname, 'custom-app', name), path.join(destination, name));
 }
-console.log('Installed Spicetify Jam direct app route.');
+console.log('Installed Jamtify direct app route.');

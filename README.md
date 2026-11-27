@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=1db954&height=120&section=header&animation=fadeIn" width="100%" alt="header wave" />
   <br />
-  <img src="https://raw.githubusercontent.com/Kyzenkms/spicetify-jam/main/assets/logo.png" alt="Spicetify Jam Logo" width="220" />
+  <img src="https://raw.githubusercontent.com/Frantt21/Jamtify/main/assets/logo.png" alt="Jamtify Logo" width="220" />
 
   <br /><br />
 
@@ -9,14 +9,14 @@
 
   <br /><br />
 
-  <a href="https://github.com/Kyzenkms/spicetify-jam/releases">
+  <a href="https://github.com/Frantt21/Jamtify/releases">
     <img src="https://img.shields.io/badge/version-1.4.2-1db954?style=flat-square&logo=spotify&logoColor=white" alt="Version" />
   </a>
   <a href="https://spicetify.app">
     <img src="https://img.shields.io/badge/built%20for-spicetify-1db954?style=flat-square" alt="Spicetify" />
   </a>
-  <a href="https://github.com/Kyzenkms/spicetify-jam/stargazers">
-    <img src="https://img.shields.io/github/stars/Kyzenkms/spicetify-jam?style=flat-square&logo=github&color=1db954" alt="GitHub Stars" />
+  <a href="https://github.com/Frantt21/Jamtify/stargazers">
+    <img src="https://img.shields.io/github/stars/Frantt21/Jamtify?style=flat-square&logo=github&color=1db954" alt="GitHub Stars" />
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-444?style=flat-square" alt="License" />
@@ -71,12 +71,12 @@ Just run this. It downloads the latest build and sets everything up automaticall
 
 **Windows (PowerShell):**
 ```powershell
-irm https://raw.githubusercontent.com/Kyzenkms/spicetify-jam/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/Frantt21/Jamtify/main/install.ps1 | iex
 ```
 
 **Linux / macOS:**
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/Kyzenkms/spicetify-jam/main/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/Frantt21/Jamtify/main/install.sh)
 ```
 
 That's it. Restart Spotify and look for the Jam icon `((•))` in the player bar.
@@ -92,8 +92,8 @@ That's it. Restart Spotify and look for the Jam icon `((•))` in the player bar
 **Windows**
 
 ```powershell
-git clone https://github.com/Kyzenkms/spicetify-jam
-cd spicetify-jam
+git clone https://github.com/Frantt21/Jamtify
+cd Jamtify
 npm install
 npm run build
 spicetify config extensions spicetify-jam.js
@@ -104,8 +104,8 @@ spicetify apply
 **Linux / macOS**
 
 ```bash
-git clone https://github.com/Kyzenkms/spicetify-jam
-cd spicetify-jam
+git clone https://github.com/Frantt21/Jamtify
+cd Jamtify
 npm install
 npm run build
 spicetify config extensions spicetify-jam.js
@@ -124,7 +124,7 @@ An **Update available** banner appears in the Jam panel when a newer version is 
 <details>
 <summary>Updating a manual installation</summary>
 
-From inside your `spicetify-jam` folder:
+From inside your `Jamtify` folder:
 
 ```bash
 git pull
@@ -153,11 +153,11 @@ spicetify apply
 2. Enter the host's **Session ID** or open their join link.
 3. Playback syncs automatically. Resuming after a pause jumps you straight to the live position.
 
-**Sharing an invite:** click **Copy Link** while hosting and send it to your friends. Links look like `https://kyzenkms.github.io/spicetify-jam/?jam=CODE`. Open the link and choose **Open Spotify** if your browser asks. The Jam panel opens and connects you to the host.
+**Sharing an invite:** click **Copy Link** while hosting and send it to your friends. Links look like `https://frantt21.github.io/Jamtify/?jam=CODE`. Open the link and choose **Open Spotify** if your browser asks. The Jam panel opens and connects you to the host.
 
-Both people need **Spotify desktop with Spicetify Jam installed and updated**. If you're on your phone, open the invite on your computer instead. You can also copy the 6-character session code and paste it into the Jam panel.
+Both people need **Spotify desktop with Jamtify installed and updated**. If you're on your phone, open the invite on your computer instead. You can also copy the 6-character session code and paste it into the Jam panel.
 
-Spotify's built-in Jam links (`spotify.link/...`) do not work with Spicetify Jam. Ask the host to create a session from this extension's Jam panel.
+Spotify's built-in Jam links (`spotify.link/...`) do not work with Jamtify. Ask the host to create a session from this extension's Jam panel.
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=1db954&height=2&width=100%" width="100%" alt="divider" />
 
@@ -167,12 +167,12 @@ Spotify's built-in Jam links (`spotify.link/...`) do not work with Spicetify Jam
 
 **Windows (PowerShell):**
 ```powershell
-irm https://raw.githubusercontent.com/Kyzenkms/spicetify-jam/main/uninstall.ps1 | iex
+irm https://raw.githubusercontent.com/Frantt21/Jamtify/main/uninstall.ps1 | iex
 ```
 
 **Linux / macOS:**
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/Kyzenkms/spicetify-jam/main/uninstall.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/Frantt21/Jamtify/main/uninstall.sh)
 ```
 
 ---
@@ -193,7 +193,7 @@ Then delete the extension file from your Extensions folder and `spicetify-jam` f
 
 **"Connection timed out" when joining**
 
-Spicetify Jam connects every client to the Jam relay server over WebSocket, so no direct connection between listeners is needed. A timeout usually means the relay server is unreachable or the host has gone offline.
+Jamtify connects every client to the Jam relay server over WebSocket, so no direct connection between listeners is needed. A timeout usually means the relay server is unreachable or the host has gone offline.
 
 - Check your internet connection and any firewall or proxy that blocks WebSocket (`wss://`) traffic
 - Make sure the host still has the Jam panel open — closing Spotify ends the session
@@ -250,7 +250,7 @@ Put it behind any TLS-terminating reverse proxy (Caddy, nginx, Tailscale Funnel)
 
 ## Contributing
 
-Found a bug or have a suggestion? [Open an issue](https://github.com/Kyzenkms/spicetify-jam/issues) — contributions are welcome.
+Found a bug or have a suggestion? [Open an issue](https://github.com/Frantt21/Jamtify/issues) — contributions are welcome.
 
 ## License
 

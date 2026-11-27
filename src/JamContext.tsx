@@ -172,7 +172,7 @@ const moveTrackNative = async (movedTrack?: TrackInfo, targetTrack?: TrackInfo, 
             return true;
         }
     } catch (e) {
-        console.warn('[Spicetify Jam] Native reorderQueue failed, will fall back to rewrite', e);
+        console.warn('[Jamtify] Native reorderQueue failed, will fall back to rewrite', e);
     }
     return false;
 };
@@ -276,7 +276,7 @@ export const JamProvider: React.FC<{ children: React.ReactNode; onInvite: () => 
     }, []);
     useEffect(() => watchForUpdates(() => {
         setUpdateAvailable(true);
-        Spicetify.showNotification('Spicetify Jam update available — open the Jam panel to update.');
+        Spicetify.showNotification('Jamtify update available — open the Jam panel to update.');
     }), []);
     useEffect(() => { refs.current.guestControls = guestControls; }, [guestControls]);
     useEffect(() => { refs.current.jamId = jamId; }, [jamId]);
@@ -1266,7 +1266,7 @@ export const JamProvider: React.FC<{ children: React.ReactNode; onInvite: () => 
             item.register();
             ctxMenuItem.current = item;
         } catch (e) {
-            console.warn('[Spicetify Jam] ContextMenu.Item registration failed', e);
+            console.warn('[Jamtify] ContextMenu.Item registration failed', e);
         }
         return () => {
             try { item?.deregister(); } catch {}
@@ -1276,7 +1276,7 @@ export const JamProvider: React.FC<{ children: React.ReactNode; onInvite: () => 
 
     useEffect(() => listenForJamInvites((Spicetify as any).Platform.History, input => {
         onInvite();
-        if (input) joinJamRef.current(input).catch(e => console.warn('[Spicetify Jam] Invite failed', e));
+        if (input) joinJamRef.current(input).catch(e => console.warn('[Jamtify] Invite failed', e));
     }), [onInvite]);
 
     return (

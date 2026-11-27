@@ -1,4 +1,4 @@
-// WebSocket transport for Spicetify Jam.
+// WebSocket transport for Jamtify.
 //
 // Replaces the previous peer-to-peer (WebRTC/PeerJS) transport: every client
 // keeps one WebSocket to the Jam relay server, which forwards messages between
@@ -34,7 +34,7 @@ class Emitter {
 
     emit(event: string, arg?: any) {
         for (const cb of (this.listeners.get(event) || []).slice()) {
-            try { cb(arg); } catch (error) { console.warn('[Spicetify Jam] transport listener failed', error); }
+            try { cb(arg); } catch (error) { console.warn('[Jamtify] transport listener failed', error); }
         }
     }
 }

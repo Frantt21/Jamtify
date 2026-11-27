@@ -152,11 +152,11 @@ const JamMenu: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     const pct = j.duration > 0 ? (j.progress / j.duration) * 100 : 0;
     const canEdit = j.isHost || j.guestControls;
     const updateBanner = j.updateAvailable && (
-        <a className="jam-error" href="https://github.com/Kyzenkms/spicetify-jam#installation"
+        <a className="jam-error" href="https://github.com/Frantt21/Jamtify#installation"
             target="_blank" rel="noopener noreferrer"
             style={{ background: 'rgba(29,185,84,0.08)', borderColor: 'rgba(29,185,84,0.2)', color: '#1db954', textDecoration: 'none' }}>
             <span aria-hidden="true">{I.warn}</span>
-            <span><strong>Update available</strong><br/>Run the installer to update Spicetify Jam.</span>
+            <span><strong>Update available</strong><br/>Run the installer to update Jamtify.</span>
         </a>
     );
 
@@ -167,7 +167,7 @@ const JamMenu: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                     <div className="jam-header-left">
                         <div className="jam-logo-icon">{I.jam}</div>
                         <div>
-                            <div className="jam-title">Spicetify Jam</div>
+                            <div className="jam-title">Jamtify</div>
                             <div className="jam-subtitle">Listen together, in sync</div>
                         </div>
                     </div>
@@ -192,7 +192,7 @@ const JamMenu: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                     <button className="jam-btn outline full" style={{marginTop:4}} onClick={() => j.joinJam(joinInput)}>Join Session</button>
                     {j.error && <div className="jam-error">{I.warn} {j.error}</div>}
                     <div style={{ textAlign: 'center', marginTop: 8, fontSize: 11, color: 'rgba(255,255,255,0.25)' }}>
-                        Enjoying Jam? <a href="https://github.com/Kyzenkms/spicetify-jam" target="_blank" style={{ color: '#1db954', textDecoration: 'none' }}>⭐ Star us on GitHub</a>
+                        Enjoying Jam? <a href="https://github.com/Frantt21/Jamtify" target="_blank" style={{ color: '#1db954', textDecoration: 'none' }}>⭐ Star us on GitHub</a>
                     </div>
                 </div>
             </div>
@@ -328,7 +328,7 @@ const JamMenu: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                         </div>
                         <div className="jam-share-row">
                             <button className="jam-btn outline flex-1"
-                                title="Open Spotify desktop and join with Spicetify Jam"
+                                title="Open Spotify desktop and join with Jamtify"
                                 onClick={() => copy(jamInviteLink(j.jamId), 'Invite link copied!')}>
                                 {I.link} Copy Link
                             </button>

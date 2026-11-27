@@ -3,7 +3,7 @@ $ErrorActionPreference = "Stop"
 $ExtensionName = "spicetify-jam.js"
 $CustomAppName = "spicetify-jam"
 
-Write-Host "Uninstalling Spicetify Jam..." -ForegroundColor Green
+Write-Host "Uninstalling Jamtify..." -ForegroundColor Green
 
 if (-not (Get-Command spicetify -ErrorAction SilentlyContinue)) {
     Write-Host "spicetify not found. Install it first: https://spicetify.app/" -ForegroundColor Red
@@ -44,5 +44,5 @@ if (Test-Path -LiteralPath $CustomAppDir) {
 Invoke-Spicetify -Arguments @("apply")
 
 Write-Host ""
-Write-Host "Spicetify Jam uninstalled successfully!" -ForegroundColor Green
+Write-Host "Jamtify uninstalled successfully!" -ForegroundColor Green
 Write-Host "   Restart Spotify to see changes."

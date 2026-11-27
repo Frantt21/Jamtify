@@ -1,4 +1,4 @@
-export const jamInviteLink = (id: string): string => `https://kyzenkms.github.io/spicetify-jam/?jam=${id}`;
+export const jamInviteLink = (id: string): string => `https://frantt21.github.io/Jamtify/?jam=${id}`;
 export const jamAppUri = (id: string): string => `spotify:app:spicetify-jam:${id}`;
 
 export function parseJamId(input: string, linkOnly = false): string | null {

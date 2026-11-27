@@ -1,11 +1,11 @@
 $ErrorActionPreference = "Stop"
 
 $ExtensionName = "spicetify-jam.js"
-$ExtensionUrl = "https://raw.githubusercontent.com/Kyzenkms/spicetify-jam/main/dist/$ExtensionName"
+$ExtensionUrl = "https://raw.githubusercontent.com/Frantt21/Jamtify/main/dist/$ExtensionName"
 $CustomAppName = "spicetify-jam"
-$CustomAppUrl = "https://raw.githubusercontent.com/Kyzenkms/spicetify-jam/main/custom-app"
+$CustomAppUrl = "https://raw.githubusercontent.com/Frantt21/Jamtify/main/custom-app"
 
-Write-Host "Installing Spicetify Jam..." -ForegroundColor Green
+Write-Host "Installing Jamtify..." -ForegroundColor Green
 
 if (-not (Get-Command spicetify -ErrorAction SilentlyContinue)) {
     $defaultPaths = @(
@@ -95,5 +95,5 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 Write-Host ""
-Write-Host "Done! Restart Spotify to use Spicetify Jam." -ForegroundColor Green
-Write-Host "   Look for Spicetify Jam in the player bar or sidebar."
+Write-Host "Done! Restart Spotify to use Jamtify." -ForegroundColor Green
+Write-Host "   Look for Jamtify in the player bar or sidebar."

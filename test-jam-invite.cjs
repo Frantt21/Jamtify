@@ -27,7 +27,7 @@ async function checkInvites() {
         assert.equal(parseJamId(input), null, input);
     }
     assert.equal(parseJamId('YYSMBM', true), null);
-    assert.equal(jamInviteLink('YYSMBM'), 'https://kyzenkms.github.io/spicetify-jam/?jam=YYSMBM');
+    assert.equal(jamInviteLink('YYSMBM'), 'https://frantt21.github.io/Jamtify/?jam=YYSMBM');
     assert.equal(jamAppUri('YYSMBM'), 'spotify:app:spicetify-jam:YYSMBM');
 
     let listener = null;

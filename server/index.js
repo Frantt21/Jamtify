@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-// Spicetify Jam relay server.
+// Jamtify relay server.
 //
 // Every Spotify client keeps a single WebSocket to this server. The host opens
 // a room with a 6-character code; guests join that room by code. Messages are

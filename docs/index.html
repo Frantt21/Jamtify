@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Join a listening session with Spicetify Jam. Open your invite directly in Spotify desktop.">
+  <meta name="description" content="Join a listening session with Jamtify. Open your invite directly in Spotify desktop.">
   <meta name="referrer" content="no-referrer">
   <meta name="color-scheme" content="light">
-  <title>Join a Jam · Spicetify Jam</title>
+  <title>Join a Jam · Jamtify</title>
   <style>
     :root { color-scheme: light; --paper: #f3f7f4; --ink: #15352b; --muted: #526d61; --line: #d6e5dc; --green: #167a42; }
     * { box-sizing: border-box; }
@@ -37,7 +37,7 @@
   <main>
     <div class="brand">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="2" fill="currentColor"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>
-      Spicetify Jam
+      Jamtify
     </div>
     <h1 id="heading">Your place in<br>the listening party.</h1>
     <p id="description">Open Spotify to join your friend's session. Your music, queue, and playback stay together.</p>
@@ -51,8 +51,8 @@
     <p id="status" class="status" role="status" aria-live="polite"></p>
     <noscript><p>Enable JavaScript to open this invite, or paste the full invite URL into the Jam panel in Spotify desktop.</p></noscript>
     <footer>
-      <p>Requires Spotify desktop and Spicetify Jam.</p>
-      <a href="https://github.com/Kyzenkms/spicetify-jam#installation" rel="noopener noreferrer">Install or update Spicetify Jam</a>
+      <p>Requires Spotify desktop and Jamtify.</p>
+      <a href="https://github.com/Frantt21/Jamtify#installation" rel="noopener noreferrer">Install or update Jamtify</a>
     </footer>
   </main>
   <script>
@@ -83,7 +83,7 @@
       });
       if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
         open.hidden = true;
-        status.textContent = 'Open this invite on your computer. Spicetify Jam runs in Spotify desktop.';
+        status.textContent = 'Open this invite on your computer. Jamtify runs in Spotify desktop.';
         return;
       }
       status.textContent = 'Allow your browser to open Spotify. If nothing happens, select Open Spotify.';

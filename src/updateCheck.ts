@@ -22,7 +22,7 @@ export function watchForUpdates(onUpdate: () => void): () => void {
         if (!active || checking || notified) return;
         checking = true;
         try {
-            const response = await fetch('https://raw.githubusercontent.com/Kyzenkms/spicetify-jam/main/manifest.json', {
+            const response = await fetch('https://raw.githubusercontent.com/Frantt21/Jamtify/main/manifest.json', {
                 cache: 'no-store', signal: AbortSignal.timeout(10000),
             });
             if (!response.ok) throw new Error(`Update check returned ${response.status}`);
@@ -32,7 +32,7 @@ export function watchForUpdates(onUpdate: () => void): () => void {
                 onUpdate();
             }
         } catch (error) {
-            console.warn('[Spicetify Jam] Failed to check for updates', error);
+            console.warn('[Jamtify] Failed to check for updates', error);
         } finally {
             checking = false;
         }

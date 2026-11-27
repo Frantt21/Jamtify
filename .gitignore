@@ -143,7 +143,7 @@ out
 
 # End of https://www.toptal.com/developers/gitignore/api/node
 
-# ── Spicetify Jam: Never commit Discord bot code ──────────────────────
+# ── Jamtify: Never commit Discord bot code ──────────────────────
 Commands/
 src/events/
 src/Models/
