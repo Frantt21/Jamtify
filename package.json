@@ -6,6 +6,8 @@
     "build": "spicetify-creator && node install-custom-app.cjs && spicetify-creator --out=dist --minify",
     "build-local": "spicetify-creator --out=dist --minify",
     "server": "node server/index.js",
+    "start": "node server/index.js",
+    "heroku-build": "node -e \"console.log('buildpack: skipping spicetify build (see heroku-build in package.json)')\"",
     "test": "node test-jam-invite.cjs && node test-update-check.cjs",
     "watch": "spicetify-creator --watch"
   },
